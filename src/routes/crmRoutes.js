@@ -1,6 +1,7 @@
 import {
   addNewContact,
-  getContacts
+  getContacts,
+  getContactWithID
 } from '../controllers/crmController';
 
 const routes = (app) => {
@@ -11,11 +12,18 @@ const routes = (app) => {
     console.log(`Request type: ${req.method}`)
     next();
   }, getContacts)
-  
+
   // POST endpoint
   .post(addNewContact);
 
   app.route('/contact/:contactId')
+  .get((req, res, next) => {
+    // middleware
+    console.log(`Request from: ${req.originalUrl}`)
+    console.log(`Request type: ${req.method}`)
+    next();
+  }, getContactWithID)
+
   .put((req, res) =>
     res.send(`PUT request successfull with ${req.params.contactId}`)
   )
