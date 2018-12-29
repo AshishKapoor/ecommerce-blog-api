@@ -2,7 +2,10 @@ module.exports = {
     "env": {
         "browser": true
     },
-    "extends": "eslint:recommended",
+    "extends": "eslint:airbnb",
+    "plugins": [
+        "react"
+    ],
     "rules": {
         "indent": [
             "error",
