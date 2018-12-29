@@ -10,10 +10,13 @@
   "author": "Ashish Kapoor",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "1.18.3",
     "express": "^4.16.2",
     "mongoose": "^5.0.8",
-    "nodemon": "^1.17.1"
+    "nodemon": "^1.17.1",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
