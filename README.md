@@ -1,9 +1,14 @@
-# node-api-crm
-Node CRM API.
+# Simple ecommerce with blog api
 
-### Notes:
-## Mongo Setup:
-https://treehouse.github.io/installation-guides/mac/mongo-mac.html
+## Models:
+- Products,
+- Shopping Cart,
+- Blog posts,
+- Authors,
+- Users.
 
-## NPM scripts:
-<pre><code>$ npm start</code></pre>
+## Also, Featuring:
+- Payment integration using stripe at checkout.
+
+## Summary:
+This is a fun project to learn how to create an api using express, postgres, and sequelize. I have no intention to invest any of my time with the UI aspect of it.
