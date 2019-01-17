@@ -37,6 +37,10 @@ Currently, It will be just the two of us. I have no idea about how docker and va
 
 
 # Structure (Tentative)
+The Routes are defined inside `/routes` folder.
+The Models schemas are defined inside the `/models` folder.
+The Restful services can be found inside `/app/api` folder.
+All public files are kept inside `/app/public` folder.
 
 ## Models:
 - Products,
