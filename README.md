@@ -36,14 +36,16 @@ http://docs.sequelizejs.com/manual/installation/usage.html
 Currently, It will be just the two of us. I have no idea about how docker and vault works. I’m only aware of JWT but even for it’s implementation It’s safe to say that you can initiate the setup. I really wish to make use of Express, Postgresql, and sequelize (ORM), stripe for payment gateway.
 
 Note:
+
 ```
 master = Production branch
 develop = Development branch
 ```
-`Continuous Integration`: we will be having `issue-<number>` branches to be merged with all the updates on `develop` branch.
-`Continuous Delivery`: if possible @prafiles hook up the `master` and `develop` branch with free `heroku` servers.
-`Continuous Deployment`: Create a pipeline @prafiles which makes it deploy each time we merge anything on the `master` and `develop` branch.
-`Continuous Testing`: Leave the testing part up to me. We'll keep all the `apis` synced on postman.
+
+- `Continuous Integration`: we will be having `issue-<number>` branches to be merged with all the updates on `develop` branch.
+- `Continuous Delivery`: if possible @prafiles hook up the `master` and `develop` branch with free `heroku` servers.
+- `Continuous Deployment`: Create a pipeline @prafiles which makes it deploy each time we merge anything on the `master` and `develop` branch.
+- `Continuous Testing`: Leave the testing part up to me. We'll keep all the `apis` synced on postman.
 
 
 ## Structure (Tentative)
