@@ -1,4 +1,5 @@
 # Simple e-commerce API including blog services.
+The project is an idea that I came up with after my own extensive research on businesses that really work well in the current times.
 
 ## What is E-Commerce Blog API?
 This project is supposed to be an API only for the e-commerce blog API.
@@ -12,7 +13,23 @@ We will be serving products like:
 7. A blog CRUD.
 
 ## Getting started.
-The project is an idea that I came up with after my own extensive research on businesses that really work well in the current times.
+
+So far we are using:
+
+- `.eslintrc.js` is currently set to 'eslint:airbnb' coding standards.
+- `server.js`is where our server and database orm setup and configuration is found.
+- `dump.sql` is data dump of dummy data(I know we can do better).
+- `config.js` contains all the environments.
+- `package.json` contains all the dependencies.
+
+Express framework
+https://expressjs.com
+
+Postgresql
+https://www.postgresql.org/docs/
+
+Sequelize:
+http://docs.sequelizejs.com/manual/installation/usage.html
 
 
 ## How to contribute?
