@@ -9,6 +9,7 @@ We will be serving products like:
 4. Jewellery (Men and Women)
 5. Shoes (Men and Women)
 6. Makeup supplies (Men and Women)
+7. A blog CRUD.
 
 ## Getting started.
 The project is an idea that I came up with after my own extensive research on businesses that really work well in the current times.
