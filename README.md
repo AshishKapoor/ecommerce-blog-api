@@ -36,11 +36,11 @@ http://docs.sequelizejs.com/manual/installation/usage.html
 Currently, It will be just the two of us. I have no idea about how docker and vault works. I’m only aware of JWT but even for it’s implementation It’s safe to say that you can initiate the setup. I really wish to make use of Express, Postgresql, and sequelize (ORM), stripe for payment gateway.
 
 
-# Structure (Tentative)
-The Routes are defined inside `/routes` folder.
-The Models schemas are defined inside the `/models` folder.
-The Restful services can be found inside `/app/api` folder.
-All public files are kept inside `/app/public` folder.
+## Structure (Tentative)
+- The Routes are defined inside `/routes` folder.
+- The Models schemas are defined inside the `/models` folder.
+- The Restful services can be found inside `/app/api` folder.
+- All public files are kept inside `/app/public` folder.
 
 ## Models:
 - Products,
