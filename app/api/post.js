@@ -7,7 +7,7 @@ module.exports = (app, db) => {
       db.post.findById(req.params.id).then( (result) => res.json(result))
     );
   
-    app.post("/post", (req, res) => 
+    app.post( "/post", (req, res) => 
       db.post.create({
         title: req.body.title,
         content: req.body.content
