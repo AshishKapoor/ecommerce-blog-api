@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 module.exports = (app, db) => {  
@@ -16,7 +17,8 @@ module.exports = (app, db) => {
       .then(async dbuser => {
         let isValidUser = await bcrypt.compare(password, dbuser.dataValues.password)
         if (isValidUser) {
-          return res.json(dbuser.dataValues);
+          const token = jwt.sign({ id: dbuser.dataValues.id }, 'ecommerce-blog-api');
+          return res.send(token);
         }
         return res.status(400).send('invalid email or password');
       })  
