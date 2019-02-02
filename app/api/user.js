@@ -1,6 +1,10 @@
 module.exports = (app, db) => {
   app.get( "/users", (req, res) =>
-    db.user.findAll().then( (result) => res.json(result) )
+    db.user.findAll()
+    .then( (result) => res.json(result) )
+    .catch( (err) => {
+      throw res.json(err);
+    })
   );
 
   app.get( "/user/:id", (req, res) =>
@@ -9,9 +13,16 @@ module.exports = (app, db) => {
 
   app.post( "/user", (req, res) => 
     db.user.create({
-      title: req.body.title,
-      content: req.body.content
-    }).then( (result) => res.json(result) )
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+      phone: req.body.phone
+    })
+    .then( (result) => res.json(result))
+    .catch( (err) => {
+      throw res.json(err.errors.map(msg => msg.message.replace("user.", "")));
+    })
   );
 
   app.put( "/user/:id", (req, res) =>
@@ -23,7 +34,12 @@ module.exports = (app, db) => {
       where: {
         id: req.params.id
       }
-    }).then( (result) => res.json(result) )
+    })
+    .then( (result) => res.json(result) )
+    .catch( (err) => {
+      console.log(err) // for the time being just to keep an eye.
+      throw res.json(err);
+    })
   );
 
   app.delete( "/user/:id", (req, res) =>
@@ -31,6 +47,11 @@ module.exports = (app, db) => {
       where: {
         id: req.params.id
       }
-    }).then( (result) => res.json(result) )
+    })
+    .then( (result) => res.json(result) )
+    .catch( (err) => {
+      console.log(err) // for the time being just to keep an eye.
+      throw res.json(err);
+    })
   );
 }
