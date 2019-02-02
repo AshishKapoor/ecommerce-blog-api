@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+
 module.exports = (app, db) => {
   app.get( "/users", (req, res) =>
     db.user.findAll()
@@ -11,19 +13,21 @@ module.exports = (app, db) => {
     db.user.findById(req.params.id).then( (result) => res.json(result))
   );
 
-  app.post( "/user", (req, res) => 
+  
+  app.post( "/user", async (req, res) => {
+    const salt = await bcrypt.genSalt(10);
     db.user.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password,
-      phone: req.body.phone
-    })
-    .then( (result) => res.json(result))
-    .catch( (err) => {
-      throw res.json(err.errors.map(msg => msg.message.replace("user.", "")));
-    })
-  );
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: await bcrypt.hash(req.body.password, salt),
+        phone: req.body.phone
+      })
+      .then( (result) => res.json(result))
+      .catch( (err) => {
+        throw res.json(err.errors.map(msg => msg.message.replace("user.", "")));
+      })
+  });
 
   app.put( "/user/:id", (req, res) =>
     db.user.update({
