@@ -9,6 +9,7 @@ const apiAuthor = require("./app/api/author");
 const apiCart = require("./app/api/cart");
 const apiUser = require("./app/api/user");
 const apiProduct = require("./app/api/product");
+const apiLogin = require("./app/api/login");
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,6 +20,7 @@ apiAuthor(app, db);
 apiCart(app, db);
 apiUser(app, db);
 apiProduct(app, db);
+apiLogin(app, db);
 
 db.sequelize.sync().then(() => {
   // populate author table with dummy data
