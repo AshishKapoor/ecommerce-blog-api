@@ -4,7 +4,7 @@ The project is an idea that I came up with after my own extensive research on bu
 ## What is E-Commerce Blog API?
 This project is supposed to be an API only for the e-commerce blog API.
 We will be serving products like:
-1. Bags (Men and Women)
+1. Bags (Men and Women) <--> Startin point
 2. Watches (Men, Unisex, and Women)
 3. Clothing (Men and Women)
 4. Jewellery (Men and Women)
@@ -58,7 +58,7 @@ develop = Development branch
 - Products,
 - Shopping Cart,
 - Blog/posts,
-- Authors,
+- Orders,
 - Users.
 
 ## Also, Featuring:
