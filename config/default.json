@@ -1,24 +1,24 @@
 {
-  "development": {
-    "username": "ashishkapoor",
+  "production": {
+    "username": "ashish",
     "password": null,
-    "database": "ecommerce",
+    "database": "ecommercedb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "development": {
+    "username": "ashish",
+    "password": null,
+    "database": "ecomdb",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "test": {
-    "username": "root",
+    "username": "ashish",
     "password": null,
-    "database": "database_test",
+    "database": "testdb",
     "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
