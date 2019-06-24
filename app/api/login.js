@@ -19,13 +19,20 @@ module.exports = (app, db) => {
         let isValidUser = await bcrypt.compare(password, dbuser.dataValues.password)
         if (isValidUser) {
           const token = jwt.sign({ id: dbuser.dataValues.id }, JWT_PRIVATE_KEY);
-          const userObject = {id: dbuser.id, firstName: dbuser.firstName, lastName: dbuser.lastName, email: dbuser.email, phone: dbuser.phone, token};
-          return res.send({ user: userObject });
+          const userObject = ({
+            id: dbuser.id,
+            firstName: dbuser.firstName,
+            lastName: dbuser.lastName,
+            email: dbuser.email,
+            phone: dbuser.phone,
+            token
+          });
+          return res.json({ user: userObject });
         }
-        return res.status(400).send('invalid email or password');
+        return res.status(400).send({ error: 'invalid email or password'});
       })  
     } catch (err) {
-      return res.status(400).send('invalid email or password');
+      return res.status(400).send({ error: 'invalid email or password'});
     }
   });
 }
