@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./config/db.js");
 const apiPost = require("./routes/post");
-const apiAuthor = require("./routes/author");
 const apiCart = require("./routes/cart");
 const apiUser = require("./routes/user");
 const apiProduct = require("./routes/product");
@@ -14,7 +13,6 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 apiPost(app, db);
-apiAuthor(app, db);
 apiCart(app, db);
 apiUser(app, db);
 apiProduct(app, db);

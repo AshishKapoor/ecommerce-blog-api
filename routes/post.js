@@ -11,7 +11,6 @@ module.exports = (app, db) => {
       db.post.create({
         title: req.body.title,
         content: req.body.content,
-        authorId: req.body.authorId,
       }).then( (result) => res.json(result) )
     );
   
