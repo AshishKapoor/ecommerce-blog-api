@@ -1,4 +1,4 @@
-const { JWT_PRIVATE_KEY } = require('../../config/config');
+const { JWT_PRIVATE_KEY } = require('../config/config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 // const cookieParser = require('cookie-parser');

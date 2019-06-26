@@ -1,5 +1,5 @@
 module.exports = (app, db) => {
-  app.get( "/products", (req, res) =>
+  app.get( "/products", (_, res) =>
     db.product.findAll().then( (result) => res.json(result) )
   );
 

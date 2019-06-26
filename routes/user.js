@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 module.exports = (app, db) => {
-  app.get( "/users", (req, res) =>
+  app.get( "/users", (_, res) =>
     db.user.findAll()
     .then( (result) => res.json(result) )
     .catch( (err) => {

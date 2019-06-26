@@ -1,17 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./models");
-const apiPost = require("./app/api/post");
-const apiAuthor = require("./app/api/author");
-const apiCart = require("./app/api/cart");
-const apiUser = require("./app/api/user");
-const apiProduct = require("./app/api/product");
-const apiLogin = require("./app/api/login");
-const apiOrder = require("./app/api/order");
+const apiPost = require("./routes/post");
+const apiAuthor = require("./routes/author");
+const apiCart = require("./routes/cart");
+const apiUser = require("./routes/user");
+const apiProduct = require("./routes/product");
+const apiLogin = require("./routes/login");
+const apiOrder = require("./routes/order");
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static("app/public"));
+app.use(express.static("static"));
 
 apiPost(app, db);
 apiAuthor(app, db);

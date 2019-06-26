@@ -1,5 +1,5 @@
 module.exports = (app, db) => {
-  app.get( "/authors", (req, res) =>
+  app.get( "/authors", (_, res) =>
     db.author.findAll().then( (result) => res.json(result) )
   );
 

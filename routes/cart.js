@@ -1,5 +1,5 @@
 module.exports = (app, db) => {
-  app.get( "/carts", (req, res) =>
+  app.get( "/carts", (_, res) =>
     db.cart.findAll().then( (result) => res.json(result) )
   );
 
