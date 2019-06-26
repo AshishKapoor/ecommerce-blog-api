@@ -2,7 +2,7 @@
   "production": {
     "username": "ashish",
     "password": null,
-    "database": "ecommercedb",
+    "database": "work",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
