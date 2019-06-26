@@ -10,7 +10,8 @@ module.exports = (app, db) => {
     app.post( "/post", (req, res) => 
       db.post.create({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        authorId: req.body.authorId,
       }).then( (result) => res.json(result) )
     );
   
