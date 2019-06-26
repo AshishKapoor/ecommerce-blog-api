@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js app.js",
+    "start": "node ./bin/www",
     "prod": "NODE_ENV=production node app.js",
     "dev": "NODE_ENV=development ./node_modules/nodemon/bin/nodemon.js app.js",
     "test": "NODE_ENV=test jest"
