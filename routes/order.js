@@ -1,3 +1,5 @@
+const checkAuth = require('../middleware/check-auth');
+
 module.exports = (app, db) => {
     app.get( "/orders", (_, res) =>
       db.order.findAll().then( (result) => res.json(result) )
@@ -7,7 +9,7 @@ module.exports = (app, db) => {
       db.order.findByPk(req.params.id).then( (result) => res.json(result))
     );
   
-    app.post( "/order", (req, res) => 
+    app.post( "/order", checkAuth, (req, res) => 
       db.order.create({
         title: req.body.title,
         content: req.body.content
