@@ -4,14 +4,18 @@ module.exports = (app, db) => {
     );
   
     app.get( "/order/:id", (req, res) =>
-      db.order.findById(req.params.id).then( (result) => res.json(result))
+      db.order.findByPk(req.params.id).then( (result) => res.json(result))
     );
   
     app.post( "/order", (req, res) => 
       db.order.create({
         title: req.body.title,
         content: req.body.content
-      }).then( (result) => res.json(result) )
+      })
+      .then( (result) => res.json(result))
+      .catch( (err) => {
+        throw res.json(err.errors.map(msg => msg.message));
+      })
     );
   
     app.put( "/order/:id", (req, res) =>

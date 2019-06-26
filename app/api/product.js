@@ -4,7 +4,7 @@ module.exports = (app, db) => {
   );
 
   app.get( "/product/:id", (req, res) =>
-    db.product.findById(req.params.id).then( (result) => res.json(result))
+    db.product.findByPk(req.params.id).then( (result) => res.json(result))
   );
 
   app.post( "/product", (req, res) => 
