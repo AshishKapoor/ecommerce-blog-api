@@ -1,5 +1,7 @@
+const checkAuth = require('../middleware/check-auth');
+
 module.exports = (app, db) => {
-  app.get( "/products", (_, res) =>
+  app.get( "/products", checkAuth, (_, res) =>
     db.product.findAll().then( (result) => res.json(result) )
   );
 

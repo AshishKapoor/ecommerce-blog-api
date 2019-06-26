@@ -7,10 +7,13 @@ const apiUser = require("./routes/user");
 const apiProduct = require("./routes/product");
 const apiLogin = require("./routes/login");
 const apiOrder = require("./routes/order");
+var cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static("public"));
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
 
 apiPost(app, db);
 apiCart(app, db);

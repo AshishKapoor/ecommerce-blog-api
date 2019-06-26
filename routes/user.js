@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
+const checkAuth = require('../middleware/check-auth');
 
 module.exports = (app, db) => {
-  app.get( "/users", (_, res) =>
+  app.get( "/users", checkAuth, (_, res) =>
     db.user.findAll()
     .then( (result) => res.json(result) )
     .catch( (err) => {
