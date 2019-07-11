@@ -11,6 +11,7 @@ We will be serving products like:
 5. Shoes (Men and Women)
 6. Makeup supplies (Men and Women)
 7. A blog CRUD.
+8. Yoga matt.
 
 ## Getting started.
 
